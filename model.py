@@ -18,6 +18,7 @@ class ANN:
         # Randomly initialize weights and biases for each layer
         layer_sizes = [self.input_size] + [self.num_nodes_hidden] * self.num_hidden_layers + [self.output_size]
         num_layers = len(layer_sizes)
+        np.random.seed(1)
 
         for i in range(1, num_layers):
             weight_matrix = np.random.randn(layer_sizes[i], layer_sizes[i-1]) / np.sqrt(layer_sizes[i-1])
